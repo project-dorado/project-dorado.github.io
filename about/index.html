@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Dorado</title>
+  <meta name="description" content="Dorado is an independent, community-driven effort to keep the Zune experience alive on modern hardware — behavioral re-implementations built with open tooling, bundling no Microsoft content." />
+  <link rel="canonical" href="https://dorado.org.uk/about/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dorado" />
+  <meta property="og:title" content="About — Dorado" />
+  <meta property="og:description" content="An independent, non-affiliated homage to the Zune experience." />
+  <meta property="og:url" content="https://dorado.org.uk/about/" />
+  <meta property="og:image" content="https://dorado.org.uk/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#0d0d0f" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/avatar-512.png" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/mark.svg" alt="" width="28" height="28" />
+        Dorado
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span></span>
+      </button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a class="nav__link" href="/">home</a>
+        <a class="nav__link" href="/projects/dorado.html">dorado</a>
+        <a class="nav__link" href="/projects/dorado-hd.html">dorado-hd</a>
+        <a class="nav__link" href="/projects/dorado-emu.html">dorado-emu</a>
+        <a class="nav__link" href="/about/" aria-current="page">about</a>
+        <a class="nav__link" href="https://github.com/project-dorado" rel="noopener">github&nbsp;&#8599;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">About the project</p>
+        <h1 class="page-hero__title">Keep the experience alive.</h1>
+        <p class="page-hero__lead">
+          Dorado is an independent, community-driven effort to keep the Zune experience
+          alive on hardware people actually own.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap prose">
+        <h2>Mission</h2>
+        <p>
+          Each project is a behavioral re-implementation: we study the original interface
+          and rebuild it cleanly with modern, open tooling. No Microsoft binaries, firmware,
+          fonts, or DRM content are involved. The result is a trio of projects that, together,
+          cover the desktop, the pocket and the platform:
+        </p>
+        <ul>
+          <li><strong>Dorado</strong> &mdash; the Zune 4.8 desktop, re-created cross-platform in .NET 8 and Avalonia.</li>
+          <li><strong>Dorado-HD</strong> &mdash; the Zune HD on-device interface, reborn for Android in Kotlin and Jetpack Compose.</li>
+          <li><strong>Dorado-EMU</strong> &mdash; a clean-room Zune HD application emulator for <code>.zcp</code> / <code>.ccgame</code> XNA packages.</li>
+        </ul>
+
+        <h2>The canon is law</h2>
+        <p>
+          The Zune design language was famously content-first: black canvases, typography as
+          navigation, zero chrome, zero rounded corners. We take that canon seriously and
+          audit it in continuous integration &mdash; the desktop build enforces
+          <code>CornerRadius = 0</code> and forbids drop shadows, while the Android build
+          rejects rounded shapes, springs and raw hex colours in the UI layer.
+        </p>
+        <ul>
+          <li><strong>Content before chrome</strong> &mdash; squares only, like the device.</li>
+          <li><strong>Typography is navigation</strong> &mdash; text-first menus, not icon grids.</li>
+          <li><strong>Hearts, not stars</strong> &mdash; the tri-state heart is the rating.</li>
+          <li><strong>Motion decelerates</strong> &mdash; cubic ease-out, no springs in navigation.</li>
+        </ul>
+
+        <h2>How it is built</h2>
+        <p>
+          Every repository runs a full build, test suite and design-invariant audit on each
+          push via GitHub Actions. Where the original behavior depends on dead services or
+          unavailable hardware, it is documented explicitly as out of scope rather than
+          faked &mdash; no gap is unplanned.
+        </p>
+
+        <h2>Community</h2>
+        <ul>
+          <li><a href="https://github.com/project-dorado/.github/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a> &mdash; how to build, test and open a great pull request.</li>
+          <li><a href="https://github.com/project-dorado/.github/blob/main/SECURITY.md" rel="noopener">Security policy</a> &mdash; report a vulnerability privately.</li>
+          <li><a href="https://github.com/project-dorado/.github/blob/main/CODE_OF_CONDUCT.md" rel="noopener">Code of Conduct</a> &mdash; the standards we hold ourselves to.</li>
+          <li><a href="https://github.com/project-dorado/.github/blob/main/SUPPORT.md" rel="noopener">Support</a> &mdash; where to ask questions.</li>
+        </ul>
+
+        <h2>Acknowledgements</h2>
+        <p>
+          A heartfelt thank you to <a href="https://github.com/cmoserror1" rel="noopener">cmoserror1</a>
+          for inspiring the creation of this project, and to the vibrant Zune preservation,
+          modding and development community across <a href="https://zunes.me" rel="noopener">zunes.me</a>,
+          <a href="https://github.com/ZuneDev" rel="noopener">ZuneDev</a>, and everyone keeping
+          the spirit of authentic digital design alive.
+        </p>
+
+        <h2>Licensing &amp; trademarks</h2>
+        <p>
+          Code is licensed under the <strong>MIT Licence</strong> unless a repository states
+          otherwise. Third-party attributions live in each repository&rsquo;s
+          <code>NOTICE.md</code>. Encrypted marketplace payloads, firmware, fonts and DRM keys
+          are never bundled.
+        </p>
+        <div class="note">
+          Zune, Zegoe, Zune HD and Microsoft are trademarks of Microsoft Corporation.
+          Dorado is an independent, non-affiliated homage and is not endorsed by or
+          affiliated with Microsoft.
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap cta-band__inner">
+        <h2>Pick a project and dive in.</h2>
+        <p>The source, issues and design docs are all public.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/project-dorado" rel="noopener">project-dorado on GitHub <span class="btn__arrow">&#8594;</span></a>
+          <a class="btn" href="/">Back to home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <div class="footer__brand">
+            <img src="/assets/img/mark.svg" alt="" width="26" height="26" />
+            Dorado
+          </div>
+          <p class="footer__about">
+            An independent, community-driven effort to keep the Zune experience alive on
+            hardware people actually own &mdash; built with modern, open tooling.
+          </p>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="/projects/dorado.html">Dorado (desktop)</a></li>
+            <li><a href="/projects/dorado-hd.html">Dorado-HD (android)</a></li>
+            <li><a href="/projects/dorado-emu.html">Dorado-EMU (core)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SECURITY.md" rel="noopener">Security policy</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CODE_OF_CONDUCT.md" rel="noopener">Code of Conduct</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SUPPORT.md" rel="noopener">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; <span data-year>2026</span> project-dorado &middot; MIT licensed</span>
+        <span>
+          Zune, Zegoe, Zune HD and Microsoft are trademarks of Microsoft Corporation.
+          Dorado is an independent, non-affiliated homage and is not endorsed by or
+          affiliated with Microsoft.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

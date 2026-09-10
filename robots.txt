@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dorado.org.uk/sitemap.xml

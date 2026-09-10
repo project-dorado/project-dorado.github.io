@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dorado-EMU — A Zune HD application emulator | Dorado</title>
+  <meta name="description" content="A clean-room Zune HD application emulator that parses .zcp / .ccgame containers and runs XNA 3.1 managed apps against a Microsoft.Xna.Framework compatibility shim." />
+  <link rel="canonical" href="https://dorado.org.uk/projects/dorado-emu.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dorado" />
+  <meta property="og:title" content="Dorado-EMU — A Zune HD application emulator" />
+  <meta property="og:description" content="Runs Zune HD .zcp / .ccgame XNA packages against a clean-room XNA 3.1 shim." />
+  <meta property="og:url" content="https://dorado.org.uk/projects/dorado-emu.html" />
+  <meta property="og:image" content="https://dorado.org.uk/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#0d0d0f" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/avatar-512.png" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/mark.svg" alt="" width="28" height="28" />
+        Dorado
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span></span>
+      </button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a class="nav__link" href="/">home</a>
+        <a class="nav__link" href="/projects/dorado.html">dorado</a>
+        <a class="nav__link" href="/projects/dorado-hd.html">dorado-hd</a>
+        <a class="nav__link" href="/projects/dorado-emu.html" aria-current="page">dorado-emu</a>
+        <a class="nav__link" href="/about/">about</a>
+        <a class="nav__link" href="https://github.com/project-dorado" rel="noopener">github&nbsp;&#8599;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <img class="page-hero__mark" src="/assets/img/mark.svg" alt="" width="72" height="72" />
+        <p class="eyebrow">Emulation core &middot; .NET 8</p>
+        <h1 class="page-hero__title">Dorado-EMU</h1>
+        <p class="page-hero__lead">
+          A Zune HD application emulator. Dorado loads and runs Zune HD
+          <code>.zcp</code> / <code>.ccgame</code> packages &mdash; XNA Game Studio 3.1
+          managed apps &mdash; and is designed to be embedded in the Dorado-HD Android client.
+        </p>
+        <div class="badges" style="margin-bottom:28px">
+          <span class="badge badge--emu">.NET 8</span>
+          <span class="badge badge--emu">Clean-room XNA 3.1 shim</span>
+          <span class="badge">Zero-warning policy</span>
+        </div>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/project-dorado/dorado-emu" rel="noopener">Repository <span class="btn__arrow">&#8594;</span></a>
+          <a class="btn" href="https://github.com/project-dorado/dorado-emu/tree/main/docs" rel="noopener">Documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap prose">
+        <h2>What it is</h2>
+        <p>
+          A Zune HD <code>.zcp</code> is an NX container holding an XNA 3.1 / .NET Compact
+          Framework 3.5 managed application. Dorado parses the container, then executes the
+          app&rsquo;s IL against a clean-room <code>Microsoft.Xna.Framework</code> 3.1
+          compatibility shim, mapping XNA graphics, audio and input onto the host platform.
+        </p>
+        <pre><code> .zcp (NX, AES-ECB DRM)  &#9472;&#9488;
+ .ccgame (MSCF cabinet)  &#9472;&#9532;&#9472;&#9654; Dorado.Containers &#9472;&#9654; managed .exe + .xnb content
+                          &#9474;                                   &#9474;
+                          &#9474;                                   &#9660;
+                          &#9474;                     Dorado.Runtime (CF 3.5 &#8594; .NET identity remap)
+                          &#9474;                                   &#9474;
+                          &#9474;                                   &#9660;
+                          &#9492;&#9472;&#9654; Microsoft.Xna.Framework 3.1 shim (Dorado.Xna)
+                                                                 &#9474;
+                                     &#9484;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9532;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9472;&#9488;
+                                     &#9660;                                                       &#9660;
+                        Dorado.Platform.Desktop (SDL/OpenGL)          Dorado.Platform.Android (EGL/GLES3/AAudio)</code></pre>
+
+        <h2>Status</h2>
+        <p>
+          There is no working Zune emulator anywhere in the world &mdash; Dorado is
+          deliberately early. Container parsing and a desktop runtime are implemented.
+        </p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Milestone</th><th scope="col">Scope</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>M0</td><td><code>.ccgame</code> + <code>.zcp</code> parsers, CLI, tests</td><td>Done</td></tr>
+              <tr><td>M1</td><td>Desktop XNA 3.1 shim; run homebrew apps; golden frames</td><td>Done</td></tr>
+              <tr><td>M2</td><td>Android host (EGL/GLES3/AAudio) + dorado-hd module</td><td>Planned</td></tr>
+              <tr><td>M3</td><td>Corpus coverage, XNB types, <code>.ccgame</code>&rarr;<code>.zcp</code> writer</td><td>Planned</td></tr>
+              <tr><td>M4</td><td>User-supplied DRM key bridge</td><td>Planned</td></tr>
+              <tr><td>M5</td><td>Optional full-system Tegra APX 2600 + WinCE 6.0 core</td><td>Planned</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>M1 results</h2>
+        <ul>
+          <li><strong>Runtime</strong> &mdash; extracts a package, then loads its managed assembly in a custom <code>AssemblyLoadContext</code> mapping Compact Framework and XNA 3.1 identities onto the framework and shims. The real <code>ZunePong.exe</code> / <code>ZuneHDDemo.exe</code> entry points execute.</li>
+          <li><strong>Shims</strong> &mdash; clean-room, identity-matched (<code>3.1.0.0</code>) assemblies covering Game loop, SpriteBatch, GraphicsDevice, ContentManager + XNB, Color/Vector/Rectangle/BoundingBox, Viewport, RenderTarget2D, and Keyboard/GamePad/Touch/Accelerometer.</li>
+          <li><strong>Backend</strong> &mdash; a deterministic headless software rasterizer with premultiplied blitting, rotation/scale/flip, render targets and a PNG writer.</li>
+          <li><strong>Verified</strong> &mdash; XNA Pong and Etch-A-Sketch render deterministic 480&times;272 frames; golden hashes are asserted and a scripted touch stream draws strokes.</li>
+        </ul>
+
+        <h2>Container formats</h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Format</th><th scope="col">Container</th><th scope="col">Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>.ccgame</code></td><td>MSCF cabinet (MSZIP)</td><td>Numbered payload files plus a <code>XCabInfo.resources</code> mapping. Unencrypted.</td></tr>
+              <tr><td><code>.zcp</code></td><td>NX container</td><td>Header, Authenticode blob, plaintext manifest, then an AES-ECB encrypted payload. Marketplace DRM keys are not public.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Build &amp; quick start</h2>
+        <pre><code>dotnet build Dorado.sln -c Release
+dotnet test  Dorado.sln
+
+# fetch a local test corpus (git-ignored; see corpus/LICENSE-MANIFEST.md)
+tools/corpus-fetch.sh</code></pre>
+        <pre><code>CLI="dotnet run --project src/Dorado.Cli --"
+
+$CLI inspect "corpus/XNA Pong.ccgame"      # container metadata + files
+$CLI refs    path/to/App.exe               # assembly/member references
+$CLI unpack  "corpus/XNA Pong.ccgame" out/ # extract an unencrypted package
+$CLI run     "corpus/XNA Pong.ccgame" --frames 20 --hash
+$CLI run     "corpus/Etch-A-Sketch.ccgame" --frames 20 --out frame.png</code></pre>
+        <div class="note">
+          Requires the .NET 8 SDK. The Android host (<code>net8.0-android</code>)
+          additionally requires the <code>android</code> workload, added in M2.
+        </div>
+
+        <h2>Licensing</h2>
+        <p>
+          MIT. Dorado is an independent homage and ships no Microsoft content &mdash; no
+          <code>.zcp</code> / <code>.ccgame</code> payloads, firmware, fonts or DRM keys.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap cta-band__inner">
+        <h2>Help build the first Zune HD emulator.</h2>
+        <p>Containers are untrusted input &mdash; parsing is defensive and every behavior ships with tests.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/project-dorado/dorado-emu" rel="noopener">Open the repository <span class="btn__arrow">&#8594;</span></a>
+          <a class="btn" href="https://github.com/project-dorado/dorado-emu/blob/main/docs/emu-architecture.md" rel="noopener">Architecture docs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <div class="footer__brand">
+            <img src="/assets/img/mark.svg" alt="" width="26" height="26" />
+            Dorado
+          </div>
+          <p class="footer__about">
+            An independent, community-driven effort to keep the Zune experience alive on
+            hardware people actually own &mdash; built with modern, open tooling.
+          </p>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="/projects/dorado.html">Dorado (desktop)</a></li>
+            <li><a href="/projects/dorado-hd.html">Dorado-HD (android)</a></li>
+            <li><a href="/projects/dorado-emu.html">Dorado-EMU (core)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SECURITY.md" rel="noopener">Security policy</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CODE_OF_CONDUCT.md" rel="noopener">Code of Conduct</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SUPPORT.md" rel="noopener">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; <span data-year>2026</span> project-dorado &middot; MIT licensed</span>
+        <span>
+          Zune, Zegoe, Zune HD and Microsoft are trademarks of Microsoft Corporation.
+          Dorado is an independent, non-affiliated homage and is not endorsed by or
+          affiliated with Microsoft.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

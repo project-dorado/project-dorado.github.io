@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dorado — The Zune experience, reborn</title>
+  <meta name="description" content="Open-source re-creations of the Microsoft Zune experience: a cross-platform desktop media player, a Zune HD–style Android music client, and the emulator core that connects them." />
+  <link rel="canonical" href="https://dorado.org.uk/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dorado" />
+  <meta property="og:title" content="Dorado — The Zune experience, reborn" />
+  <meta property="og:description" content="A cross-platform desktop media player, a Zune HD–style Android music client, and the emulator core that connects them." />
+  <meta property="og:url" content="https://dorado.org.uk/" />
+  <meta property="og:image" content="https://dorado.org.uk/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dorado — The Zune experience, reborn" />
+  <meta name="twitter:description" content="Open-source re-creations of the Microsoft Zune experience." />
+  <meta name="twitter:image" content="https://dorado.org.uk/assets/img/og-image.png" />
+
+  <meta name="theme-color" content="#0d0d0f" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/avatar-512.png" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Dorado",
+    "url": "https://dorado.org.uk/",
+    "logo": "https://dorado.org.uk/assets/img/avatar-512.png",
+    "description": "Open-source re-creations of the Microsoft Zune experience.",
+    "sameAs": ["https://github.com/project-dorado"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/mark.svg" alt="" width="28" height="28" />
+        Dorado
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span></span>
+      </button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a class="nav__link" href="/" aria-current="page">home</a>
+        <a class="nav__link" href="/projects/dorado.html">dorado</a>
+        <a class="nav__link" href="/projects/dorado-hd.html">dorado-hd</a>
+        <a class="nav__link" href="/projects/dorado-emu.html">dorado-emu</a>
+        <a class="nav__link" href="/about/">about</a>
+        <a class="nav__link" href="https://github.com/project-dorado" rel="noopener">github&nbsp;&#8599;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <img class="hero__mark" src="/assets/img/mark.svg" alt="Dorado" width="168" height="168" />
+        <div>
+          <p class="eyebrow">Open source &middot; Independent &middot; Non-affiliated</p>
+          <h1 class="hero__title">The Zune<br /><span class="grad-text">experience, reborn.</span></h1>
+          <p class="hero__subtitle">
+            A cross-platform desktop media player, a Zune HD&ndash;style Android music
+            client, and the emulator core that connects them &mdash; rebuilt cleanly with
+            modern, open tooling.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="/projects/dorado.html">Explore Dorado <span class="btn__arrow">&#8594;</span></a>
+            <a class="btn" href="https://github.com/project-dorado" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <p class="eyebrow reveal">The projects</p>
+        <h2 class="section__title reveal" id="projects-title">Three re-implementations, one canon.</h2>
+        <p class="section__lead reveal">
+          Each project studies the original interface and rebuilds it behaviorally.
+          No Microsoft binaries, firmware, or DRM content are involved.
+        </p>
+
+        <div class="grid grid--3">
+          <article class="card card--dorado reveal">
+            <img class="card__icon" src="/assets/img/mark.svg" alt="" width="56" height="56" />
+            <h3 class="card__title">Dorado</h3>
+            <p class="card__meta">Desktop &middot; .NET 8 &middot; Avalonia</p>
+            <p class="card__body">
+              An authentic cross-platform re-creation of Zune 4.8 Desktop: Metro pivots,
+              Quickplay &amp; Smart DJ, Mixview, a real BASS audio engine (gapless,
+              crossfade, ReplayGain, FFT), libVLC video, and MusicBrainz / Fanart.tv /
+              LRCLIB enrichment.
+            </p>
+            <a class="card__link" href="/projects/dorado.html">Read more</a>
+          </article>
+
+          <article class="card card--hd reveal">
+            <img class="card__icon" src="/assets/img/mark-hd.svg" alt="" width="56" height="56" />
+            <h3 class="card__title">Dorado-HD</h3>
+            <p class="card__meta">Android &middot; Kotlin &middot; Compose</p>
+            <p class="card__body">
+              The Zune HD handheld, reborn for modern Android: the 480&times;272 device
+              canvas, crossbar pivots, kinetic lists, tri-state hearts, Media3 / ExoPlayer
+              playback, a MediaStore-backed library, and 20+ re-implemented mini-apps
+              and games.
+            </p>
+            <a class="card__link" href="/projects/dorado-hd.html">Read more</a>
+          </article>
+
+          <article class="card card--emu reveal">
+            <img class="card__icon" src="/assets/img/mark.svg" alt="" width="56" height="56" />
+            <h3 class="card__title">Dorado-EMU</h3>
+            <p class="card__meta">Emulation core</p>
+            <p class="card__body">
+              A Zune HD application emulator that runs <code>.zcp</code> /
+              <code>.ccgame</code> XNA packages &mdash; the shared core behind the Android
+              client&rsquo;s marketplace heritage.
+            </p>
+            <a class="card__link" href="/projects/dorado-emu.html">Read more</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section" aria-labelledby="numbers-title">
+      <div class="wrap">
+        <h2 class="section__title reveal" id="numbers-title">By the numbers</h2>
+        <div class="stats reveal">
+          <div class="stat">
+            <span class="stat__value grad-text">~85%</span>
+            <span class="stat__label">Zune 4.8 desktop parity</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">167</span>
+            <span class="stat__label">Desktop unit tests</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">480&times;272</span>
+            <span class="stat__label">Authentic HD device canvas</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">MIT</span>
+            <span class="stat__label">Open-source licence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="section" aria-labelledby="highlights-title">
+      <div class="wrap">
+        <p class="eyebrow reveal">What got built</p>
+        <h2 class="section__title reveal" id="highlights-title">Fidelity you can hear and see.</h2>
+        <p class="section__lead reveal">
+          The design language was famously content-first: black canvases, typography as
+          navigation, zero chrome, zero rounded corners. Ported faithfully &mdash; and
+          audited in continuous integration.
+        </p>
+
+        <div class="features reveal">
+          <div class="feature">
+            <h3>A real audio engine</h3>
+            <p>BASS with gapless chaining, equal-power crossfade, ReplayGain leveling and an FFT spectrum visualizer.</p>
+          </div>
+          <div class="feature">
+            <h3>Smart DJ &amp; tri-state hearts</h3>
+            <p>Hearts are prioritised in Smart DJ shuffles; broken hearts are always excluded &mdash; the Zune differentiator.</p>
+          </div>
+          <div class="feature">
+            <h3>Pivot navigation</h3>
+            <p>Panoramic pivot strip, parallax 3D slide, and the fan-loved tap-the-cut-off-header to go back.</p>
+          </div>
+          <div class="feature">
+            <h3>The HD device canvas</h3>
+            <p>An authentic 480&times;272 surface with crossbar pivots, kinetic scrolling and text-first navigation.</p>
+          </div>
+          <div class="feature">
+            <h3>XNA package emulation</h3>
+            <p>Loads Zune HD <code>.zcp</code> / <code>.ccgame</code> apps against a clean-room XNA 3.1 shim.</p>
+          </div>
+          <div class="feature">
+            <h3>Metadata enrichment</h3>
+            <p>MusicBrainz, Fanart.tv, Last.fm and LRCLIB aggregation with per-track match review.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech -->
+    <section class="section" aria-labelledby="tech-title">
+      <div class="wrap">
+        <h2 class="section__title reveal" id="tech-title">Technology at a glance</h2>
+        <div class="table-scroll reveal">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">&nbsp;</th>
+                <th scope="col">Dorado (desktop)</th>
+                <th scope="col">Dorado-HD (android)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>UI</td><td>Avalonia 11 &middot; XAML &middot; MVVM</td><td>Jetpack Compose &middot; Material 3</td></tr>
+              <tr><td>Audio</td><td>BASS / ManagedBass (P/Invoke)</td><td>Media3 / ExoPlayer</td></tr>
+              <tr><td>Video</td><td>libVLCSharp</td><td>Media3</td></tr>
+              <tr><td>Storage</td><td>EF Core + SQLite</td><td>Room + DataStore</td></tr>
+              <tr><td>Toolchain</td><td>.NET 8 &middot; C# 12</td><td>AGP 9 &middot; Kotlin 2.4 &middot; KSP</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="wrap cta-band__inner reveal">
+        <h2>Keep the Zune experience alive.</h2>
+        <p>
+          Dorado is community-driven and open source. Every repository runs a full build,
+          test suite and design-invariant audit on each push.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/project-dorado" rel="noopener">Contribute on GitHub <span class="btn__arrow">&#8594;</span></a>
+          <a class="btn" href="/about/">About the project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <div class="footer__brand">
+            <img src="/assets/img/mark.svg" alt="" width="26" height="26" />
+            Dorado
+          </div>
+          <p class="footer__about">
+            An independent, community-driven effort to keep the Zune experience alive on
+            hardware people actually own &mdash; built with modern, open tooling.
+          </p>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="/projects/dorado.html">Dorado (desktop)</a></li>
+            <li><a href="/projects/dorado-hd.html">Dorado-HD (android)</a></li>
+            <li><a href="/projects/dorado-emu.html">Dorado-EMU (core)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SECURITY.md" rel="noopener">Security policy</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CODE_OF_CONDUCT.md" rel="noopener">Code of Conduct</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SUPPORT.md" rel="noopener">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; <span data-year>2026</span> project-dorado &middot; MIT licensed</span>
+        <span>
+          Zune, Zegoe, Zune HD and Microsoft are trademarks of Microsoft Corporation.
+          Dorado is an independent, non-affiliated homage and is not endorsed by or
+          affiliated with Microsoft.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

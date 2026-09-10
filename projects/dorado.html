@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dorado — Desktop Zune 4.8 re-creation | Dorado</title>
+  <meta name="description" content="An authentic cross-platform re-creation of Zune 4.8 Desktop in .NET 8 and Avalonia: Metro pivots, Quickplay & Smart DJ, a real BASS audio engine, libVLC video and metadata enrichment." />
+  <link rel="canonical" href="https://dorado.org.uk/projects/dorado.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dorado" />
+  <meta property="og:title" content="Dorado — Desktop Zune 4.8 re-creation" />
+  <meta property="og:description" content="A cross-platform Zune 4.8 Desktop re-creation in .NET 8 and Avalonia." />
+  <meta property="og:url" content="https://dorado.org.uk/projects/dorado.html" />
+  <meta property="og:image" content="https://dorado.org.uk/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#0d0d0f" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/avatar-512.png" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/mark.svg" alt="" width="28" height="28" />
+        Dorado
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span></span>
+      </button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a class="nav__link" href="/">home</a>
+        <a class="nav__link" href="/projects/dorado.html" aria-current="page">dorado</a>
+        <a class="nav__link" href="/projects/dorado-hd.html">dorado-hd</a>
+        <a class="nav__link" href="/projects/dorado-emu.html">dorado-emu</a>
+        <a class="nav__link" href="/about/">about</a>
+        <a class="nav__link" href="https://github.com/project-dorado" rel="noopener">github&nbsp;&#8599;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <img class="page-hero__mark" src="/assets/img/mark.svg" alt="" width="72" height="72" />
+        <p class="eyebrow">Desktop &middot; Windows &amp; Linux</p>
+        <h1 class="page-hero__title">Dorado</h1>
+        <p class="page-hero__lead">
+          The authentic cross-platform spiritual successor to Microsoft Zune Desktop
+          &amp; Player &mdash; a behavioral re-implementation of Zune 4.8, built in
+          .NET 8 and Avalonia.
+        </p>
+        <div class="badges" style="margin-bottom:28px">
+          <span class="badge badge--pink">.NET 8</span>
+          <span class="badge badge--pink">Avalonia 11</span>
+          <span class="badge badge--pink">C# 12</span>
+          <span class="badge">Windows &middot; Linux x64 / arm64</span>
+        </div>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/project-dorado/dorado" rel="noopener">Repository <span class="btn__arrow">&#8594;</span></a>
+          <a class="btn" href="https://github.com/project-dorado/dorado/releases" rel="noopener">Releases</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap prose">
+        <h2>The Zune &ldquo;Metro&rdquo; experience</h2>
+        <p>
+          Dorado is built on the purest tenets of the original Zune Desktop software:
+          content before chrome, typography as art, and iconic pivot navigation. Zero
+          rounded corners, no drop shadows, no skeuomorphic textures.
+        </p>
+        <ul>
+          <li><strong>Content before chrome</strong> &mdash; <code>CornerRadius = 0</code> everywhere, no shadows, no faux-leather.</li>
+          <li><strong>Typography as art</strong> &mdash; Segoe UI / Selawik metrics with opacity communicating state (active 100%, hover 85%, inactive 40%).</li>
+          <li><strong>Iconic pivot navigation</strong> &mdash; fluid deceleration panning across Quickplay, Collection, Device and Settings.</li>
+          <li><strong>Signature accents</strong> &mdash; the authentic Zune 4.8 magenta family plus Orange / Cyan / Lime / Purple user-selectable accents.</li>
+        </ul>
+
+        <h2>What&rsquo;s achieved</h2>
+        <p>
+          A broad slice of the complete Zune 4.8 desktop software, restructured around
+          the original experience with extensive decompiled-corpus verification.
+        </p>
+        <ul>
+          <li><strong>Shell &amp; navigation</strong> &mdash; custom borderless chrome, panoramic pivot strip with right-edge bleed, tap-the-cut-off-header to go back, parallax 3D pivot slide, compact mini-player.</li>
+          <li><strong>Real audio engine</strong> &mdash; BASS with gapless transitions, equal-power crossfade, ReplayGain, a 75&nbsp;ms FFT visualizer, and podcast streams.</li>
+          <li><strong>Smart DJ &amp; ratings</strong> &mdash; prioritises hearts, always excludes broken hearts; tri-state heart rating across playback and library.</li>
+          <li><strong>Collection &amp; library</strong> &mdash; Artist / Album / Song / Genre / Playlist / Podcast / Video / Pictures sub-pivots, smart playlists, metadata editing, Find Album Info, folder watching.</li>
+          <li><strong>Device sync</strong> &mdash; sync-group engine with dry-run plans, guest sessions, reverse sync, FirstConnect wizard (real MTPZ hardware is documented N-A).</li>
+          <li><strong>Now Playing</strong> &mdash; artist canvas with Ken-Burns drift, album-art mosaic wall, libVLC video, bio / lyrics / showlist drawers, idle screensaver.</li>
+          <li><strong>Playlists</strong> &mdash; drag-and-drop with hover-swap-icon drop targets, .ZPL export, rule-based smart playlists.</li>
+          <li><strong>Settings</strong> &mdash; 12 software pages and 4 device pages, runtime dark / light theme swap.</li>
+        </ul>
+
+        <h2>Parity status</h2>
+        <p>
+          Verified against the Zune 4.8 decompiled corpus. The corpus itself is not
+          committed, for IP reasons.
+        </p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Domain</th><th scope="col">Parity</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Shell &amp; navigation</td><td>~90%</td></tr>
+              <tr><td>Quickplay</td><td>~80%</td></tr>
+              <tr><td>Collection (music)</td><td>~90%</td></tr>
+              <tr><td>Now Playing</td><td>~90%</td></tr>
+              <tr><td>Mixview</td><td>~60%</td></tr>
+              <tr><td>Audio engine</td><td>~85%</td></tr>
+              <tr><td>Device sync</td><td>~65%</td></tr>
+              <tr><td>Podcasts</td><td>~75%</td></tr>
+              <tr><td>Settings &amp; management</td><td>~85%</td></tr>
+              <tr><td>Social / Marketplace</td><td>Server-dependent (N-A)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Weighted overall parity: ~85%</strong> (UI presentation weighted strongly, hardware-dependent features neutrally).</p>
+
+        <h2>Build &amp; run</h2>
+        <p>Requires the <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8.0 SDK</a>.</p>
+        <pre><code>dotnet run --project src/Dorado.Desktop/Dorado.Desktop.csproj
+dotnet test Dorado.sln</code></pre>
+        <p>Multi-platform publishing:</p>
+        <pre><code>dotnet publish src/Dorado.Desktop -r linux-x64  -c Release
+dotnet publish src/Dorado.Desktop -r linux-arm64 -c Release
+dotnet publish src/Dorado.Desktop -r win-x64    -c Release
+dotnet publish src/Dorado.Desktop -r win-arm64  -c Release</code></pre>
+        <div class="note">
+          On Linux, install <code>vlc</code> (or <code>libvlc5</code> / <code>libvlccore9</code>)
+          for the video surface. BASS audio natives ship per-RID. On Windows arm64, BASS has
+          no ARM64 natives, so audio runs in simulated (silent) mode.
+        </div>
+        <p>
+          Tagging <code>dorado-v*</code> publishes self-contained archives for linux-x64,
+          linux-arm64, win-x64 and win-arm64 via GitHub Actions.
+        </p>
+
+        <h2>Licence</h2>
+        <p>MIT. See the <a href="https://github.com/project-dorado/dorado/blob/main/LICENSE" rel="noopener">LICENSE</a>.</p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap cta-band__inner">
+        <h2>Build the desktop Zune with us.</h2>
+        <p>No gap is unplanned &mdash; every remaining item is tracked with a rationale in the parity registry.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/project-dorado/dorado" rel="noopener">Open the repository <span class="btn__arrow">&#8594;</span></a>
+          <a class="btn" href="https://github.com/project-dorado/dorado/blob/main/CONTRIBUTING.md" rel="noopener">How to contribute</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <div class="footer__brand">
+            <img src="/assets/img/mark.svg" alt="" width="26" height="26" />
+            Dorado
+          </div>
+          <p class="footer__about">
+            An independent, community-driven effort to keep the Zune experience alive on
+            hardware people actually own &mdash; built with modern, open tooling.
+          </p>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="/projects/dorado.html">Dorado (desktop)</a></li>
+            <li><a href="/projects/dorado-hd.html">Dorado-HD (android)</a></li>
+            <li><a href="/projects/dorado-emu.html">Dorado-EMU (core)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SECURITY.md" rel="noopener">Security policy</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CODE_OF_CONDUCT.md" rel="noopener">Code of Conduct</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SUPPORT.md" rel="noopener">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; <span data-year>2026</span> project-dorado &middot; MIT licensed</span>
+        <span>
+          Zune, Zegoe, Zune HD and Microsoft are trademarks of Microsoft Corporation.
+          Dorado is an independent, non-affiliated homage and is not endorsed by or
+          affiliated with Microsoft.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

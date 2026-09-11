@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dorado — The Zune experience, reborn</title>
-  <meta name="description" content="Open-source re-creations of the Microsoft Zune experience: a cross-platform desktop media player, a Zune HD–style Android music client, and the emulator core that connects them." />
+  <meta name="description" content="Open-source re-creations of the Microsoft Zune experience: a cross-platform desktop media player, a Zune HD–style Android music client, a Zune HD app emulator, and a self-hostable community cloud backend." />
   <link rel="canonical" href="https://dorado.org.uk/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dorado" />
   <meta property="og:title" content="Dorado — The Zune experience, reborn" />
-  <meta property="og:description" content="A cross-platform desktop media player, a Zune HD–style Android music client, and the emulator core that connects them." />
+  <meta property="og:description" content="A cross-platform desktop media player, a Zune HD–style Android music client, a Zune HD app emulator, and a self-hostable community cloud backend." />
   <meta property="og:url" content="https://dorado.org.uk/" />
   <meta property="og:image" content="https://dorado.org.uk/assets/img/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -54,6 +54,7 @@
         <a class="nav__link" href="/projects/dorado.html">dorado</a>
         <a class="nav__link" href="/projects/dorado-hd.html">dorado-hd</a>
         <a class="nav__link" href="/projects/dorado-emu.html">dorado-emu</a>
+        <a class="nav__link" href="/projects/dorado-cloud.html">dorado-cloud</a>
         <a class="nav__link" href="/about/">about</a>
         <a class="nav__link" href="https://github.com/project-dorado" rel="noopener">github&nbsp;&#8599;</a>
       </nav>
@@ -70,8 +71,8 @@
           <h1 class="hero__title">The Zune<br /><span class="grad-text">experience, reborn.</span></h1>
           <p class="hero__subtitle">
             A cross-platform desktop media player, a Zune HD&ndash;style Android music
-            client, and the emulator core that connects them &mdash; rebuilt cleanly with
-            modern, open tooling.
+            client, a Zune HD app emulator, and the self-hostable community cloud that
+            ties them together &mdash; rebuilt cleanly with modern, open tooling.
           </p>
           <div class="hero__cta">
             <a class="btn btn--primary" href="/projects/dorado.html">Explore Dorado <span class="btn__arrow">&#8594;</span></a>
@@ -85,13 +86,13 @@
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="wrap">
         <p class="eyebrow reveal">The projects</p>
-        <h2 class="section__title reveal" id="projects-title">Three re-implementations, one canon.</h2>
+        <h2 class="section__title reveal" id="projects-title">Four re-implementations, one canon.</h2>
         <p class="section__lead reveal">
           Each project studies the original interface and rebuilds it behaviorally.
           No Microsoft binaries, firmware, or DRM content are involved.
         </p>
 
-        <div class="grid grid--3">
+        <div class="grid grid--4">
           <article class="card card--dorado reveal">
             <img class="card__icon" src="/assets/img/mark.svg" alt="" width="56" height="56" />
             <h3 class="card__title">Dorado</h3>
@@ -129,6 +130,19 @@
             </p>
             <a class="card__link" href="/projects/dorado-emu.html">Read more</a>
           </article>
+
+          <article class="card card--cloud reveal">
+            <img class="card__icon" src="/assets/img/mark.svg" alt="" width="56" height="56" />
+            <h3 class="card__title">Dorado Cloud</h3>
+            <p class="card__meta">Backend &middot; .NET 8 &middot; self-hostable</p>
+            <p class="card__body">
+              Community cloud services that replace the dead Zune web services: OpenIddict
+              identity, device registry &amp; settings sync, signed updates, a MusicBrainz
+              catalog and artwork CDN, podcast/radio directory, QuickMix recommendations,
+              and social &amp; Zune Card.
+            </p>
+            <a class="card__link" href="/projects/dorado-cloud.html">Read more</a>
+          </article>
         </div>
       </div>
     </section>
@@ -139,16 +153,16 @@
         <h2 class="section__title reveal" id="numbers-title">By the numbers</h2>
         <div class="stats reveal">
           <div class="stat">
-            <span class="stat__value grad-text">~85%</span>
+            <span class="stat__value grad-text">~88%</span>
             <span class="stat__label">Zune 4.8 desktop parity</span>
           </div>
           <div class="stat">
-            <span class="stat__value">167</span>
-            <span class="stat__label">Desktop unit tests</span>
+            <span class="stat__value">640</span>
+            <span class="stat__label">Tests across all projects</span>
           </div>
           <div class="stat">
-            <span class="stat__value">480&times;272</span>
-            <span class="stat__label">Authentic HD device canvas</span>
+            <span class="stat__value">29</span>
+            <span class="stat__label">Re-implemented HD mini-apps</span>
           </div>
           <div class="stat">
             <span class="stat__value">MIT</span>
@@ -212,7 +226,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>UI</td><td>Avalonia 11 &middot; XAML &middot; MVVM</td><td>Jetpack Compose &middot; Material 3</td></tr>
+              <tr><td>UI</td><td>Avalonia 11 &middot; XAML &middot; MVVM</td><td>Compose + custom Zune tokens</td></tr>
               <tr><td>Audio</td><td>BASS / ManagedBass (P/Invoke)</td><td>Media3 / ExoPlayer</td></tr>
               <tr><td>Video</td><td>libVLCSharp</td><td>Media3</td></tr>
               <tr><td>Storage</td><td>EF Core + SQLite</td><td>Room + DataStore</td></tr>
@@ -258,6 +272,7 @@
             <li><a href="/projects/dorado.html">Dorado (desktop)</a></li>
             <li><a href="/projects/dorado-hd.html">Dorado-HD (android)</a></li>
             <li><a href="/projects/dorado-emu.html">Dorado-EMU (core)</a></li>
+            <li><a href="/projects/dorado-cloud.html">Dorado Cloud (backend)</a></li>
           </ul>
         </div>
         <div>

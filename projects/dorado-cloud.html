@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dorado Cloud — self-hostable community backend | Dorado</title>
+  <meta name="description" content="Dorado Cloud replaces the long-dead Zune web services with a modern, open, self-hostable backend: OpenIddict identity, device registry and settings sync, signed updates, a MusicBrainz catalog and artwork CDN, podcast/radio directory, recommendations and social features." />
+  <link rel="canonical" href="https://dorado.org.uk/projects/dorado-cloud.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dorado" />
+  <meta property="og:title" content="Dorado Cloud — self-hostable community backend" />
+  <meta property="og:description" content="Community cloud services for the Dorado desktop and Android clients — self-hostable, open, and DRM-free." />
+  <meta property="og:url" content="https://dorado.org.uk/projects/dorado-cloud.html" />
+  <meta property="og:image" content="https://dorado.org.uk/assets/img/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#0d0d0f" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/img/avatar-512.png" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="/">
+        <img src="/assets/img/mark.svg" alt="" width="28" height="28" />
+        Dorado
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span></span>
+      </button>
+      <nav id="primary-nav" class="nav" aria-label="Primary">
+        <a class="nav__link" href="/">home</a>
+        <a class="nav__link" href="/projects/dorado.html">dorado</a>
+        <a class="nav__link" href="/projects/dorado-hd.html">dorado-hd</a>
+        <a class="nav__link" href="/projects/dorado-emu.html">dorado-emu</a>
+        <a class="nav__link" href="/projects/dorado-cloud.html" aria-current="page">dorado-cloud</a>
+        <a class="nav__link" href="/about/">about</a>
+        <a class="nav__link" href="https://github.com/project-dorado" rel="noopener">github&nbsp;&#8599;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <img class="page-hero__mark" src="/assets/img/mark.svg" alt="" width="72" height="72" />
+        <p class="eyebrow">Backend &middot; .NET 8 &middot; self-hostable</p>
+        <h1 class="page-hero__title">Dorado Cloud</h1>
+        <p class="page-hero__lead">
+          Community cloud services for the Dorado desktop and Android clients.
+          Dorado Cloud replaces the long-dead Zune web services with a modern, open,
+          self-hostable backend &mdash; shared catalog and artwork, identity and
+          cross-device settings, recommendations, social features, directory search
+          and signed app updates.
+        </p>
+        <div class="badges" style="margin-bottom:28px">
+          <span class="badge badge--pink">.NET 8</span>
+          <span class="badge badge--pink">OpenIddict 5 (OIDC)</span>
+          <span class="badge">PostgreSQL &middot; Redis &middot; S3 / MinIO</span>
+          <span class="badge">Docker Compose &middot; Helm</span>
+        </div>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/project-dorado/dorado-cloud" rel="noopener">Repository <span class="btn__arrow">&#8594;</span></a>
+          <a class="btn" href="https://github.com/project-dorado/dorado-cloud/blob/main/ROADMAP.md" rel="noopener">Roadmap</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap prose">
+        <h2>What it is</h2>
+        <p>
+          A <strong>modular monolith</strong> where each domain is an endpoint module
+          mounted under <code>/v1/{module}</code>, behind a thin YARP gateway. Modules can
+          be extracted into independent services later without changing the public routes.
+          It is <strong>not affiliated with Microsoft</strong> and hosts no copyrighted
+          media &mdash; streaming is limited to public-domain / Creative Commons content.
+        </p>
+
+        <h2>Modules</h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Module</th><th scope="col">What it does</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>identity</code></td><td>OpenIddict OIDC (auth-code + PKCE, refresh, client-credentials), accounts, device registry, versioned settings sync, GDPR export/erasure.</td></tr>
+              <tr><td><code>updates</code></td><td>Signed (RS256) update feed; the public verification key is served to clients.</td></tr>
+              <tr><td><code>catalog</code></td><td>MusicBrainz artist / release-group / recording search and lookup, rate-limited and cached.</td></tr>
+              <tr><td><code>artwork</code></td><td>Cover Art Archive front covers, cloned into object storage with an SSRF allowlist and a long-lived cache header.</td></tr>
+              <tr><td><code>directory</code></td><td>Podcast Index and Radio-Browser search with attribution and graceful degradation.</td></tr>
+              <tr><td><code>recs</code></td><td>QuickMix similarity recommendations (heuristic scoring, explained; a pgvector pipeline can slot in behind the stable contract).</td></tr>
+              <tr><td><code>social</code></td><td>Profiles, follow graph, activity feed, Zune Card, badges and moderation.</td></tr>
+              <tr><td><code>media</code></td><td>Public-domain / CC streaming &mdash; <strong>legal-gated</strong> (a deliberate stub pending sign-off).</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Status</h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Milestone</th><th scope="col">Scope</th><th scope="col">Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>M0</td><td>Modular monolith + gateway, OpenIddict, Postgres/Redis/MinIO, compose + Helm, CI &rarr; ghcr</td><td>Done</td></tr>
+              <tr><td>M1</td><td>Accounts + browser login, persistent keys, device registry, settings sync, signed updates</td><td>Done</td></tr>
+              <tr><td>M2</td><td>Directory (podcast + radio)</td><td>Done</td></tr>
+              <tr><td>M3</td><td>Catalog + artwork CDN (object storage)</td><td>Done</td></tr>
+              <tr><td>M4</td><td>Social (profiles, feed, Zune Card, badges, moderation)</td><td>Done</td></tr>
+              <tr><td>M5</td><td>QuickMix recommendations</td><td>Done</td></tr>
+              <tr><td>M6</td><td>Media &mdash; public-domain / CC streaming</td><td>Legal-gated</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Security &amp; hardening</h2>
+        <ul>
+          <li><strong>Auth rate limiting</strong> &mdash; a path-partitioned, per-IP fixed window on <code>/connect/token</code>, <code>/account/login</code> and <code>/account/register</code>.</li>
+          <li><strong>Fail-closed admin</strong> &mdash; moderation/publish requires an allowlist outside development.</li>
+          <li><strong>CORS allowlist</strong> &mdash; browsers are constrained to <code>Cors:AllowedOrigins</code>.</li>
+          <li><strong>GDPR</strong> &mdash; <code>GET /v1/identity/me/export</code> (portability) and <code>DELETE /v1/identity/me</code> (erasure; revokes OIDC tokens).</li>
+          <li><strong>Schema</strong> &mdash; versioned EF Core migrations on PostgreSQL (<code>EnsureCreated</code> for local SQLite).</li>
+          <li><strong>No DRM circumvention</strong> and no license-server emulation; no dev secret is seeded outside development.</li>
+        </ul>
+
+        <h2>Run it</h2>
+        <pre><code># local (SQLite, no containers)
+dotnet restore DoradoCloud.sln
+dotnet run --project src/DoradoCloud.Api     # http://localhost:5080 (Swagger at /swagger)
+
+# full stack (PostgreSQL + Redis + MinIO, gateway on :5088)
+cp .env.example .env && docker compose up --build</code></pre>
+        <div class="note">
+          The API is a modular monolith behind a YARP gateway. Official images are
+          published to <code>ghcr.io/project-dorado/dorado-cloud-{api,gateway}</code>.
+        </div>
+
+        <h2>Technology</h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Layer</th><th scope="col">Choice</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Runtime</td><td>ASP.NET Core minimal APIs (.NET 8)</td></tr>
+              <tr><td>Auth</td><td>OpenIddict 5 &mdash; authorization code + PKCE, refresh, client credentials</td></tr>
+              <tr><td>Data</td><td>EF Core + PostgreSQL (SQLite for local/dev), Redis cache, S3/MinIO object storage</td></tr>
+              <tr><td>Contract</td><td>OpenAPI at <code>/swagger</code>; a typed client SDK in <code>clients/DoradoCloud.Client</code></td></tr>
+              <tr><td>Ops</td><td>Docker Compose, Helm chart, OpenTelemetry (opt-in), health probes</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Legal &amp; licensing</h2>
+        <p>
+          Code is MIT. Dorado Cloud hosts no copyrighted media and does not reimplement
+          DRM. Metadata and artwork come from openly licensed providers with attribution.
+          Zune, Zegoe, Zune HD and Microsoft are trademarks of Microsoft Corporation;
+          Dorado is an independent, non-affiliated homage.
+        </p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap cta-band__inner">
+        <h2>Run your own Dorado Cloud.</h2>
+        <p>Self-host the whole stack with one compose file, or a Helm chart on Kubernetes.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://github.com/project-dorado/dorado-cloud" rel="noopener">Open the repository <span class="btn__arrow">&#8594;</span></a>
+          <a class="btn" href="https://github.com/project-dorado/dorado-cloud/blob/main/README.md" rel="noopener">Read the docs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__brand-col">
+          <div class="footer__brand">
+            <img src="/assets/img/mark.svg" alt="" width="26" height="26" />
+            Dorado
+          </div>
+          <p class="footer__about">
+            An independent, community-driven effort to keep the Zune experience alive on
+            hardware people actually own &mdash; built with modern, open tooling.
+          </p>
+        </div>
+        <div>
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="/projects/dorado.html">Dorado (desktop)</a></li>
+            <li><a href="/projects/dorado-hd.html">Dorado-HD (android)</a></li>
+            <li><a href="/projects/dorado-emu.html">Dorado-EMU (core)</a></li>
+            <li><a href="/projects/dorado-cloud.html">Dorado Cloud (backend)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SECURITY.md" rel="noopener">Security policy</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/CODE_OF_CONDUCT.md" rel="noopener">Code of Conduct</a></li>
+            <li><a href="https://github.com/project-dorado/.github/blob/main/SUPPORT.md" rel="noopener">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; <span data-year>2026</span> project-dorado &middot; MIT licensed</span>
+        <span>
+          Zune, Zegoe, Zune HD and Microsoft are trademarks of Microsoft Corporation.
+          Dorado is an independent, non-affiliated homage and is not endorsed by or
+          affiliated with Microsoft.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

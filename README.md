@@ -13,7 +13,8 @@ straight from the `main` branch (legacy branch deployment).
 ├── projects/                # one page per project
 │   ├── dorado.html
 │   ├── dorado-hd.html
-│   └── dorado-emu.html
+│   ├── dorado-emu.html
+│   └── dorado-cloud.html
 ├── about/index.html         # mission, canon, licensing, acknowledgements
 ├── 404.html
 ├── assets/

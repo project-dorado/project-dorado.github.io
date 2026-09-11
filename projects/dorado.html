@@ -37,6 +37,7 @@
         <a class="nav__link" href="/projects/dorado.html" aria-current="page">dorado</a>
         <a class="nav__link" href="/projects/dorado-hd.html">dorado-hd</a>
         <a class="nav__link" href="/projects/dorado-emu.html">dorado-emu</a>
+        <a class="nav__link" href="/projects/dorado-cloud.html">dorado-cloud</a>
         <a class="nav__link" href="/about/">about</a>
         <a class="nav__link" href="https://github.com/project-dorado" rel="noopener">github&nbsp;&#8599;</a>
       </nav>
@@ -92,10 +93,14 @@
           <li><strong>Real audio engine</strong> &mdash; BASS with gapless transitions, equal-power crossfade, ReplayGain, a 75&nbsp;ms FFT visualizer, and podcast streams.</li>
           <li><strong>Smart DJ &amp; ratings</strong> &mdash; prioritises hearts, always excludes broken hearts; tri-state heart rating across playback and library.</li>
           <li><strong>Collection &amp; library</strong> &mdash; Artist / Album / Song / Genre / Playlist / Podcast / Video / Pictures sub-pivots, smart playlists, metadata editing, Find Album Info, folder watching.</li>
-          <li><strong>Device sync</strong> &mdash; sync-group engine with dry-run plans, guest sessions, reverse sync, FirstConnect wizard (real MTPZ hardware is documented N-A).</li>
+          <li><strong>Device sync</strong> &mdash; sync-group engine with dry-run plans, guest sessions, reverse sync, FirstConnect wizard, and a LAN sync endpoint advertised over mDNS (real MTPZ hardware is documented N-A).</li>
           <li><strong>Now Playing</strong> &mdash; artist canvas with Ken-Burns drift, album-art mosaic wall, libVLC video, bio / lyrics / showlist drawers, idle screensaver.</li>
+          <li><strong>Listening intelligence</strong> &mdash; real DSP audio features (short-time FFT, RMS, tempo), Dynamic Mixes, cosine-similarity recommendations, and Mixview artist satellites.</li>
+          <li><strong>Plugins</strong> &mdash; a sandboxed out-of-process host (JSON-RPC over stdio) with Last.fm and Discord reference plugins.</li>
+          <li><strong>Reputation &amp; reviews</strong> &mdash; tiered badge taxonomy and local album reviews, replacing the dead Zune social layer.</li>
           <li><strong>Playlists</strong> &mdash; drag-and-drop with hover-swap-icon drop targets, .ZPL export, rule-based smart playlists.</li>
-          <li><strong>Settings</strong> &mdash; 12 software pages and 4 device pages, runtime dark / light theme swap.</li>
+          <li><strong>Metadata</strong> &mdash; MusicBrainz, Cover Art Archive, Fanart.tv, LRCLIB and AcoustID enrichment, plus a 10-band equalizer and en/fr localization.</li>
+          <li><strong>Settings</strong> &mdash; 13 software pages and 4 device pages, runtime dark / light theme swap.</li>
         </ul>
 
         <h2>Parity status</h2>
@@ -109,20 +114,22 @@
               <tr><th scope="col">Domain</th><th scope="col">Parity</th></tr>
             </thead>
             <tbody>
-              <tr><td>Shell &amp; navigation</td><td>~90%</td></tr>
-              <tr><td>Quickplay</td><td>~80%</td></tr>
-              <tr><td>Collection (music)</td><td>~90%</td></tr>
+              <tr><td>Shell &amp; navigation</td><td>~92%</td></tr>
+              <tr><td>Quickplay</td><td>~85%</td></tr>
+              <tr><td>Collection (music)</td><td>~92%</td></tr>
               <tr><td>Now Playing</td><td>~90%</td></tr>
-              <tr><td>Mixview</td><td>~60%</td></tr>
-              <tr><td>Audio engine</td><td>~85%</td></tr>
-              <tr><td>Device sync</td><td>~65%</td></tr>
-              <tr><td>Podcasts</td><td>~75%</td></tr>
-              <tr><td>Settings &amp; management</td><td>~85%</td></tr>
+              <tr><td>Mixview</td><td>~72%</td></tr>
+              <tr><td>Audio engine</td><td>~88%</td></tr>
+              <tr><td>CD Land</td><td>~40%</td></tr>
+              <tr><td>Device sync</td><td>~70%</td></tr>
+              <tr><td>Podcasts</td><td>~85%</td></tr>
+              <tr><td>Settings &amp; management</td><td>~88%</td></tr>
+              <tr><td>First-launch &amp; onboarding</td><td>~90%</td></tr>
               <tr><td>Social / Marketplace</td><td>Server-dependent (N-A)</td></tr>
             </tbody>
           </table>
         </div>
-        <p><strong>Weighted overall parity: ~85%</strong> (UI presentation weighted strongly, hardware-dependent features neutrally).</p>
+        <p><strong>Weighted overall parity: ~88%</strong> (UI presentation weighted strongly, hardware-dependent features neutrally).</p>
 
         <h2>Build &amp; run</h2>
         <p>Requires the <a href="https://dotnet.microsoft.com/download/dotnet/8.0" rel="noopener">.NET 8.0 SDK</a>.</p>
@@ -179,6 +186,7 @@ dotnet publish src/Dorado.Desktop -r win-arm64  -c Release</code></pre>
             <li><a href="/projects/dorado.html">Dorado (desktop)</a></li>
             <li><a href="/projects/dorado-hd.html">Dorado-HD (android)</a></li>
             <li><a href="/projects/dorado-emu.html">Dorado-EMU (core)</a></li>
+            <li><a href="/projects/dorado-cloud.html">Dorado Cloud (backend)</a></li>
           </ul>
         </div>
         <div>

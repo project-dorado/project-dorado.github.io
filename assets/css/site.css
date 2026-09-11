@@ -31,6 +31,7 @@
   --accent-dorado: #fa2a55;
   --accent-hd: #1ba1e2;
   --accent-emu: #f09609;
+  --accent-cloud: #339933;
 
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -420,6 +421,10 @@ a {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .card {
   position: relative;
   display: flex;
@@ -457,6 +462,7 @@ a {
 .card--dorado::after { background: var(--accent-dorado); }
 .card--hd::after { background: var(--accent-hd); }
 .card--emu::after { background: var(--accent-emu); }
+.card--cloud::after { background: var(--accent-cloud); }
 
 .card__icon {
   width: 56px;
@@ -917,6 +923,7 @@ td:first-child {
 
 @media (max-width: 900px) {
   .grid--3,
+  .grid--4,
   .stats {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -965,6 +972,7 @@ td:first-child {
 
   .grid--3,
   .grid--2,
+  .grid--4,
   .stats,
   .features,
   .footer__grid {

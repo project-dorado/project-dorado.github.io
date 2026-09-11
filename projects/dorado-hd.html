@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dorado-HD — The Zune HD, reborn for Android | Dorado</title>
-  <meta name="description" content="A faithful re-creation of the Zune HD on-device UI for modern Android: the 480×272 device canvas, crossbar pivots, kinetic lists, tri-state hearts, Media3 playback, and 29 mini-apps in Jetpack Compose." />
+  <meta name="description" content="A faithful re-creation of the Zune HD on-device UI for modern Android: the 480×272 device canvas, crossbar pivots, kinetic lists, tri-state hearts, Media3 playback, and all 62 official Zune HD apps in Jetpack Compose, including an OpenGL ES 3D engine core." />
   <link rel="canonical" href="https://dorado.org.uk/projects/dorado-hd.html" />
 
   <meta property="og:type" content="website" />
@@ -76,8 +76,8 @@
           Just as the Zune HD was the device and Zune 4.8 was the desktop, Dorado-HD is
           the phone and <a href="/projects/dorado.html">Dorado</a> is the desktop. The
           current port faithfully reproduces the device across home + quickplay + 5 media
-          pivots + 29 installed mini-apps &mdash; design-language-correct, tokenized, and
-          audited by Robolectric unit tests and a source-level design-invariant scanner.
+          pivots + all 62 official apps &mdash; design-language-correct, tokenized, and
+          audited by 1,086 unit tests and a source-level design-invariant scanner.
         </p>
 
         <h2>Shell &mdash; home &amp; quickplay</h2>
@@ -120,7 +120,7 @@
           <li><strong>Now Playing widget</strong> &mdash; a Glance home-screen widget with transport over the shared Media3 session.</li>
         </ul>
 
-        <h2>Mini-app platform &mdash; 29 apps</h2>
+        <h2>Mini-app platform &mdash; 62 apps</h2>
         <p>Behavioral re-implementations across three categories:</p>
         <ul>
           <li><strong>Utilities (12)</strong> &mdash; calculator, notes, stopwatch, metronome, alarm clock, calendar, level, piano, drum machine, chord finder, music quiz, shuffle by album. PCM-synth instruments; accelerometer level; Room-backed notes / calendar / alarms.</li>
@@ -138,7 +138,7 @@
         <h2>Build &amp; test</h2>
         <pre><code>./gradlew assembleDebug test lint</code></pre>
         <div class="note">
-          157 Robolectric unit tests plus a design-invariant source scanner that forbids
+          1,086 unit tests plus a design-invariant source scanner that forbids
           rounded corners, springs, raw hex colours and named colour constants in the UI.
           Green on JDK 21 / AGP 9.4.
         </div>
